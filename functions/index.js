@@ -140,7 +140,7 @@ exports.updateUserCredentials = onCall({ region: "europe-west1" }, async (reques
 exports.rotateDailyToOguz = onSchedule(
   {
     region: "europe-west1",
-    schedule: "15 19 * * *",
+    schedule: "25 19 * * *",
     timeZone: "Europe/Istanbul",
   },
   async () => {
