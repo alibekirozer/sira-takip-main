@@ -140,7 +140,7 @@ exports.updateUserCredentials = onCall({ region: "europe-west1" }, async (reques
 exports.rotateDailyToOguz = onSchedule(
   {
     region: "europe-west1",
-    schedule: "0 19 * * *",
+    schedule: "15 19 * * *",
     timeZone: "Europe/Istanbul",
   },
   async () => {
@@ -148,7 +148,7 @@ exports.rotateDailyToOguz = onSchedule(
     const activeSnap = await db.ref("siraTakip/activeList").once("value");
     const list = activeSnap.val() || [];
 
-    const oguzIndex = list.findIndex((emp) => emp.name === "Oğuz");
+    const oguzIndex = list.findIndex((emp) => emp.name === "Oğuz_2260");
     if (oguzIndex === -1) {
       console.log("Oğuz bulunamadı");
       return;
